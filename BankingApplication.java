@@ -1,6 +1,4 @@
 import java.util.Scanner;
-
-// Account Class
 class Account {
     private int accountNumber;
     private String accountHolderName;
@@ -58,15 +56,13 @@ class Account {
         System.out.println("Contact details updated successfully!");
     }
 }
-
-// User Interface Class
 public class BankingApplication {
     private Account[] accounts;
     private int accountCount;
     private Scanner sc;
 
     public BankingApplication() {
-        accounts = new Account[100]; // can store up to 100 accounts
+        accounts = new Account[100]; 
         accountCount = 0;
         sc = new Scanner(System.in);
     }
@@ -85,13 +81,13 @@ public class BankingApplication {
         String name = sc.nextLine();
         System.out.print("Enter initial deposit amount: ");
         double balance = sc.nextDouble();
-        sc.nextLine(); // consume newline
+        sc.nextLine(); 
         System.out.print("Enter email address: ");
         String email = sc.nextLine();
         System.out.print("Enter phone number: ");
         String phone = sc.nextLine();
 
-        int accountNumber = 1000 + accountCount + 1; // auto-generate
+        int accountNumber = 1000 + accountCount + 1;
         accounts[accountCount++] = new Account(accountNumber, name, balance, email, phone);
 
         System.out.println("Account created successfully with Account Number: " + accountNumber);
@@ -102,7 +98,7 @@ public class BankingApplication {
         int accNo = sc.nextInt();
         System.out.print("Enter deposit amount: ");
         double amount = sc.nextDouble();
-        sc.nextLine(); // consume newline
+        sc.nextLine(); 
 
         Account acc = findAccount(accNo);
         if (acc != null) {
@@ -117,7 +113,7 @@ public class BankingApplication {
         int accNo = sc.nextInt();
         System.out.print("Enter withdrawal amount: ");
         double amount = sc.nextDouble();
-        sc.nextLine(); // consume newline
+        sc.nextLine(); 
 
         Account acc = findAccount(accNo);
         if (acc != null) {
@@ -130,7 +126,7 @@ public class BankingApplication {
     public void showAccountDetails() {
         System.out.print("Enter account number: ");
         int accNo = sc.nextInt();
-        sc.nextLine(); // consume newline
+        sc.nextLine(); 
 
         Account acc = findAccount(accNo);
         if (acc != null) {
@@ -143,7 +139,7 @@ public class BankingApplication {
     public void updateContact() {
         System.out.print("Enter account number: ");
         int accNo = sc.nextInt();
-        sc.nextLine(); // consume newline
+        sc.nextLine(); 
         System.out.print("Enter new email address: ");
         String email = sc.nextLine();
         System.out.print("Enter new phone number: ");
@@ -169,7 +165,7 @@ public class BankingApplication {
             System.out.println("6. Exit");
             System.out.print("Enter your choice: ");
             choice = sc.nextInt();
-            sc.nextLine(); // consume newline
+            sc.nextLine(); 
 
             switch (choice) {
                 case 1: createAccount(); break;
@@ -188,4 +184,5 @@ public class BankingApplication {
         app.mainMenu();
     }
 }
+
 
